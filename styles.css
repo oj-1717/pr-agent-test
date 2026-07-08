@@ -1,0 +1,107 @@
+body {
+    background-color: #212529;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;  
+    height: 100vh;  
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 100px;
+    text-align: center;
+    background: linear-gradient(to right, #1985a1,#f1fffa);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    animation: anime 1s linear infinite alternate;
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+h4 {
+    font-size: 30px;
+    color: white;
+}
+
+.box {
+    position: relative;
+    height: 80px;
+    width: 70%;
+    background-color: #2f2f2f;
+    padding: 4px;
+    overflow: hidden;
+    z-index: 1; /* Lower z-index to place the button behind the hand */
+}
+
+#in {
+    height: 100%;
+    width: 100%;
+    background-color: #333533;
+    position: relative;
+    z-index: 10;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 60px;
+    width: 600px;
+    background-color: #e9e3e6;
+    animation: move 2s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(225deg);
+    }
+}
+
+.hand {
+    position: absolute;
+     top:78vh ;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;  
+    z-index: 100;  
+    animation: handMove 2s ease-in-out infinite;
+}
+
+.hand img {
+    width: 100%; 
+}
+
+@keyframes handMove {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);  
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
