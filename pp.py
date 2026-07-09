@@ -1,2 +1,0 @@
-print("idiot")
-    print("idiot")
